@@ -17,14 +17,14 @@ ActiveRecord::Schema.define(version: 20151205171953) do
   enable_extension "plpgsql"
 
   create_table "bins", force: :cascade do |t|
-    t.string   "borough",    null: false
-    t.string   "site_type",  null: false
-    t.string   "site_name",  null: false
-    t.string   "address",    null: false
-    t.float    "latitude",   null: false
-    t.float    "longitude",  null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "borough"
+    t.string   "site_type"
+    t.string   "park_site_name"
+    t.string   "address"
+    t.float    "latitude",       null: false
+    t.float    "longitude",      null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
 end
