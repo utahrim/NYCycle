@@ -1,8 +1,5 @@
 class BinsController < ApplicationController
 
-  include ParserHelper
-
-  BINS ||= ParserHelper.get_data
 
   def index
     @bins = Bin.all
@@ -14,5 +11,11 @@ class BinsController < ApplicationController
     @bin = Bin.closest(:origin => @user_location).first
   end
 
-
+  def convert_to_latlng
+    address = params["address"] + ", " + params["city"] + ", " + params["zip"]
+    address_data = Geokit::Geocoders::GoogleGeocoder.geocode address
+    @user_location = Geokit::LatLng.new(address_data.lat, address_data.lng)
+    @bin = Bin.closest(:origin => @user_location).first
+    render "/bins/getlatlng"
+  end
 end

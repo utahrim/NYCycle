@@ -1,6 +1,22 @@
 <h1> Re: </h1>
 
 <button id="button">Find my closest bin</button>
+
+<%= form_tag "/bins/convert_to_latlng", method: :post do %>
+  <br>
+  <%= text_field_tag "address", nil, placeholder:"Street Address" %>
+  <br>
+  <%= text_field_tag "city", nil, placeholder:"City" %>
+  <br>
+  <%= text_field_tag "state", nil, placeholder:"State" %>
+  <br>
+  <%= text_field_tag "zip", nil, placeholder:"Zip Code" %>
+  <br>
+  <%= submit_tag "Find Bin" %>
+<% end %>
+
+
+
 <p id="location"></p>
 
 

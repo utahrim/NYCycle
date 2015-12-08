@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :bins, only: [:index, :show]
     post 'bins/getlatlng', :to => 'bins#getlatlng'
+    post 'bins/convert_to_latlng', :to => 'bins#convert_to_latlng'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
