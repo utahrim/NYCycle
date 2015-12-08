@@ -23,11 +23,6 @@ $(document).ready(function(){
 
         location.html('<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>');
 
-        var img = new Image();
-        img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
-
-        location.append(img);
-
         var user_location = {lat: location.attr("data-lat"), lng: location.attr("data-lng")};
 
         request = $.ajax({
