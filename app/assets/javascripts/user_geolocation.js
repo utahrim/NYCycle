@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   var location = $("#location")
 
-  $('#button').on('click', function(event){
+  $('#button').one('click', function(event){
 
     event.preventDefault();
     whereAmI();
