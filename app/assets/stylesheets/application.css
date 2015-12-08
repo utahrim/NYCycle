@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ #map {
+  height: 500px;
+  width: 500px;
+ }
+
+ #street-view {
+  height: 500px;
+  width: 500px;
+ }
