@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="errors"></div>
 
 <div class="main">
@@ -21,6 +22,26 @@
 
         <p id="location"></p>
       </div>
+=======
+<div class="row">
+  <div class="twelve columns text-center"><br />
+    
+    <h1> Re: </h1>
+      
+    <div class="main_page">
+
+      <button class="button">Find my closest bin</button>
+
+      <%= form_tag "/bins/convert_to_latlng", method: :post do %>
+        <%= submit_tag "Find Bin", class:"success button" %>
+        <%= text_field_tag "address", nil, placeholder:"Street Address", required: true %>
+        <%= text_field_tag "city", nil, placeholder:"City", required: true %>
+        <%= text_field_tag "state", nil, placeholder:"State" %>
+        <%= text_field_tag "zip", nil, placeholder:"Zip Code" %>
+      <% end %>
+
+      <p id="location"></p>
+>>>>>>> Add foundation to form, buttons and map
     </div>
   </div>
 </div>
