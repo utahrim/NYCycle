@@ -1,6 +1,5 @@
 class BinsController < ApplicationController
 
-
   def index
     @bins = Bin.all
     render "/bins/index"
@@ -9,6 +8,7 @@ class BinsController < ApplicationController
   def getlatlng
     @user_location = Geokit::LatLng.new(params[:lat].to_f, params[:lng].to_f)
     @bin = Bin.closest(:origin => @user_location).first
+    render "/bins/walking_directions"
   end
 
   def convert_to_latlng

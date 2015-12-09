@@ -1,0 +1,59 @@
+<h1>Walking Directions</h1>
+
+<div id="test"></div>
+
+
+<div id="right-panel"></div>
+
+<div id="floating-panel"></div>
+
+<div id="map"></div>
+
+<script type="text/javascript">
+
+function initMap() {
+
+  var user = {lat: <%= @user_location.lat %>, lng: <%= @user_location.lng %>};
+  var bin = {lat: <%= @bin.latitude %>, lng: <%= @bin.longitude %>};
+
+  var directionsDisplay = new google.maps.DirectionsRenderer;
+  var directionsService = new google.maps.DirectionsService;
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 7,
+    center: user
+  });
+
+  directionsDisplay.setMap(map);
+  directionsDisplay.setPanel(document.getElementById('test'));
+
+  var control = document.getElementById('floating-panel');
+  control.style.display = 'block';
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+
+
+  calculateAndDisplayRoute(directionsService, directionsDisplay);
+
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  var start = user;
+  var end = bin;
+  directionsService.route({
+    origin: start,
+    destination: end,
+    travelMode: google.maps.TravelMode.WALKING
+  }, function(response, status) {
+    if (status === google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+}
+}
+
+</script>
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTprEG2S0w5APdH4WRIC2ks0aDhMSfyac&callback=initMap">
+</script>
