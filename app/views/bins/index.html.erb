@@ -4,23 +4,25 @@
 
 <div class="main">
 
-  <h1> Re: </h1>
+  <div class="row">
+    <div class="twelve columns text-center"><br />
+      
+      <h1> Re: </h1>
+        
+      <div class="main_page">
 
-    <button id="geolocatebin">Find my closest bin</button>
+        <button class="button">Find my closest bin</button>
 
-    <%= form_tag "/bins/convert_to_latlng", method: :post do %>
-      <br>
-      <%= text_field_tag "address", nil, placeholder:"Street Address" %>
-      <br>
-      <%= text_field_tag "city", nil, placeholder:"City" %>
-      <br>
-      <%= text_field_tag "state", nil, placeholder:"State" %>
-      <br>
-      <%= text_field_tag "zip", nil, placeholder:"Zip Code" %>
-      <br>
-      <%= submit_tag "Find Bin", :id => "find-bin" %>
-    <% end %>
+        <%= form_tag "/bins/convert_to_latlng", method: :post do %>
+          <%= submit_tag "Find Bin", class:"success button" %>
+          <%= text_field_tag "address", nil, placeholder:"Street Address", required: true %>
+          <%= text_field_tag "city", nil, placeholder:"City", required: true %>
+          <%= text_field_tag "state", nil, placeholder:"State" %>
+          <%= text_field_tag "zip", nil, placeholder:"Zip Code" %>
+        <% end %>
 
+        <p id="location"></p>
+      </div>
+    </div>
+  </div>
 </div>
-
-
