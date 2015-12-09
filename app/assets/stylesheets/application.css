@@ -30,12 +30,35 @@
   overflow: hidden;
  }
 
- #walking_directions {
-  height: 500em;
-  width: 500em;
+ #street_view {
+  margin: 0 auto 0 auto;
+  position: relative;
+  padding-bottom: 65.25%;
+  padding-top: 13em;
+  height: 0;
+  overflow: hidden;
  }
 
- #street_view {
-  height: 500em;
-  width: 500em;
+  #walking_directions {
+  margin: 0 auto 0 auto;
+  position: relative;
+  padding-bottom: 65.25%;
+  padding-top: 13em;
+  height: 0;
+  overflow: hidden;
  }
+
+#map-button {
+  display: inline-block;
+  position: center;
+}
+
+#streetview-button {
+  display: inline-block;
+  position: center;
+}
+
+#walking-button {
+  display: inline-block;
+  position: center;
+}
