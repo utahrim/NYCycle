@@ -1,12 +1,29 @@
 <div class="main">
 
-  <h3>Street View</h3>
+  <%= form_tag "/bins/getlatlng", method: :post, id: "map-button" do %>
+  <%= hidden_field_tag(:lat, @user_location.latitude) %>
+  <%= hidden_field_tag(:lng, @user_location.longitude) %>
+  <%= hidden_field_tag(:bin, @bin.id) %>
+  <%= submit_tag("Map")%>
+  <% end %>
+
+  <%= form_tag "/bins/walking_directions", method: :post, id: "walking-button" do %>
+  <%= hidden_field_tag(:lat, @user_location.latitude) %>
+  <%= hidden_field_tag(:lng, @user_location.longitude) %>
+  <%= hidden_field_tag(:bin, @bin.id) %>
+  <%= submit_tag("Walking Directions")%>
+  <% end %>
+
+  <%= form_tag "/bins/street_view", method: :post, id: "streetview-button" do %>
+  <%= hidden_field_tag(:lat, @user_location.latitude) %>
+  <%= hidden_field_tag(:lng, @user_location.longitude) %>
+  <%= hidden_field_tag(:bin, @bin.id) %>
+  <%= submit_tag("Street View")%>
+  <% end %>
+
+   <h3>Street View</h3>
 
   <div id="street_view"></div>
-
-  <%= button_to "Map", { action: "getlatlng", lat: @user_location.latitude, lng: @user_location.longitude, bin: @bin }, id: "map-button", method: :post %>
-  <%= button_to "Waking Directions", { action: "walking_directions", lat: @user_location.latitude, lng: @user_location.longitude, bin: @bin }, id: "walking-button", method: :post %>
-  <%= button_to "Street View", { action: "street_view", lat: @user_location.latitude, lng: @user_location.longitude, bin: @bin }, id: "street-button", method: :post %>
 
   <script type="text/javascript">
 

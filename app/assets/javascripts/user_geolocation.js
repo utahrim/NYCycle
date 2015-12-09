@@ -3,7 +3,49 @@ $(document).ready(function(){
   var errors = $("#errors")
   var main = $(".main")
 
+  $(document).on("submit", "#map-button", function(event){
+  event.preventDefault();
+  var data = $(this).serialize();
+  console.log("please");
+  $.ajax({
+    url: "bins/getlatlng",
+    method: "post",
+    data: data
+    })
+    .done(function(response){
+    main.html(response);
+    });
+  });
+
+  $(document).on("submit", "#walking-button", function(event){
+  event.preventDefault();
+  var data = $(this).serialize();
+  $.ajax({
+    url: "bins/walking_directions",
+    method: "post",
+    data: data
+    })
+    .done(function(response){
+    main.html(response);
+    $("#map").hide()
+    });
+  });
+
+  $(document).on("submit", "#streetview-button", function(event){
+  event.preventDefault();
+  var data = $(this).serialize();
+  $.ajax({
+    url: "bins/street_view",
+    method: "post",
+    data: data
+    })
+    .done(function(response){
+    main.html(response);
+    });
+  });
+
   $('.button').one('click', function(event){
+
     event.preventDefault();
     whereAmI();
 
