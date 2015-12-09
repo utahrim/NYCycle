@@ -8,18 +8,21 @@ class BinsController < ApplicationController
   def getlatlng
     @user_location = Geokit::LatLng.new(params[:lat].to_f, params[:lng].to_f)
     @bin = Bin.closest(:origin => @user_location).first
-    # render "/bins/walking_directions"
-    # render "/bins/street_view"
+    render "/bins/getlatlng", layout: false
   end
 
    def walking_directions
     @user_location = Geokit::LatLng.new(params[:lat].to_f, params[:lng].to_f)
-    @bin = Bin.closest(:origin => @user_location).first
+    @bin = Bin.find(params[:bin])
+    # binding.pry
+    render "/bins/walking_directions", layout: false
   end
 
    def street_view
     @user_location = Geokit::LatLng.new(params[:lat].to_f, params[:lng].to_f)
-    @bin = Bin.closest(:origin => @user_location).first
+    @bin = Bin.find(params[:bin])
+    # binding.pry
+    render "/bins/street_view", layout: false
   end
 
   def convert_to_latlng

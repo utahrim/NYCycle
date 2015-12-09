@@ -1,17 +1,21 @@
-// var panorama;
-// function initialize() {
-//   panorama = new google.maps.StreetViewPanorama(
-//     document.getElementById('street-view'),
-//     {
-// //     position: {lat: <%= @bin.latitude %>, lng: <%= @bin.longitude %>},
-//       pov: {heading: 0, pitch: 0},
-//       zoom: 1
-//     });
-// }
 
+  // $(document).on( "click", "#street-button", function() {
+  // console.log( "what");
+  // });
 
+  // $('.main').on('click', "#street-button" function(event){
 
+  //   event.preventDefault();
+  //   data = $(this).serialize()
+  //   debugger
 
-// <script async defer
-//  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTprEG2S0w5APdH4WRIC2ks0aDhMSfyac&callback=initialize">
-// </script>
+  //    $.ajax({
+  //       url: "bins/street_view",
+  //       method: "post",
+  //       data: data
+  //     })
+  //     .done(function(response){
+  //       main.html(response);
+  //     });
+
+  // });

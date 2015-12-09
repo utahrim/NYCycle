@@ -1,83 +1,92 @@
-<h1>Your Location (A) | The Closest Recycling Bin (B)</h1>
-<div id="map"></div>
+<div class="main">
 
-<script type="text/javascript">
+  <h3>Your Location (A) | The Closest Recycling Bin (B)</h3>
+  <div id="map"></div>
 
-var map;
-function initMap() {
+  <%= button_to "Map", { action: "getlatlng", lat: @user_location.latitude, lng: @user_location.longitude, bin: @bin }, id: "map-button", method: :post %>
+  <%= button_to "Waking Directions", { action: "walking_directions", lat: @user_location.latitude, lng: @user_location.longitude, bin: @bin }, id: "walking-button", method: :post %>
+  <%= button_to "Street View", { action: "street_view", lat: @user_location.latitude, lng: @user_location.longitude, bin: @bin }, id: "street-button", method: :post %>
 
-  var user = {lat: <%= @user_location.lat %>, lng: <%= @user_location.lng %>};
-  var bin = {lat: <%= @bin.latitude %>, lng: <%= @bin.longitude %>};
+  <script type="text/javascript">
 
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: user,
-    scrollwheel: false,
-    zoom: 7
-  });
+  var map;
+  function initMap() {
 
-  var directionsDisplay = new google.maps.DirectionsRenderer({
-    map: map
-  });
+    var user = {lat: <%= @user_location.lat %>, lng: <%= @user_location.lng %>};
+    var bin = {lat: <%= @bin.latitude %>, lng: <%= @bin.longitude %>};
 
-  var request = {
-    destination: bin,
-    origin: user,
-    travelMode: google.maps.TravelMode.WALKING
-  };
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: user,
+      scrollwheel: false,
+      zoom: 7
+    });
 
-  var directionsService = new google.maps.DirectionsService();
-  directionsService.route(request, function(response, status) {
-    if (status == google.maps.DirectionsStatus.OK) {
+    var directionsDisplay = new google.maps.DirectionsRenderer({
+      map: map
+    });
 
-      directionsDisplay.setDirections(response);
-    }
-  });
-}
+    var request = {
+      destination: bin,
+      origin: user,
+      travelMode: google.maps.TravelMode.WALKING
+    };
 
-    // var person_image = "<%= image_url "person.png" %>";
+    var directionsService = new google.maps.DirectionsService();
+    directionsService.route(request, function(response, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
 
-    // var recycling_image = "<%= image_url "recycle_icon2.png" %>";
+        directionsDisplay.setDirections(response);
+      }
+    });
+  }
 
-    // var user_location_info = "You are here"
+      // var person_image = "<%= image_url "person.png" %>";
 
-    // var bin_location_info = "Here is the closest recycling bin"
+      // var recycling_image = "<%= image_url "recycle_icon2.png" %>";
 
-    // var infowindowUser = new google.maps.InfoWindow({
-    // content: user_location_info
-    // });
+      // var user_location_info = "You are here"
 
-    // var infowindowBin = new google.maps.InfoWindow({
-    // content: bin_location_info
-    // });
+      // var bin_location_info = "Here is the closest recycling bin"
 
-    // var you = new google.maps.Marker({
-    //   position: {lat: <%= @user_location.lat %>, lng: <%= @user_location.lng %>},
-    //   map: map,
-    //   title: 'You!',
-    //   label: "Y",
-    //   animation: google.maps.Animation.DROP
-    //   // icon: person_image
-    // });
+      // var infowindowUser = new google.maps.InfoWindow({
+      // content: user_location_info
+      // });
 
-    // you.addListener('click', function() {
-    // infowindowUser.open(map, you);
-    // });
+      // var infowindowBin = new google.maps.InfoWindow({
+      // content: bin_location_info
+      // });
 
-    // var bin = new google.maps.Marker({
-    //   position: {lat: <%= @bin.latitude %>, lng: <%= @bin.longitude %>},
-    //   map: map,
-    //   title: 'Your bin!',
-    //   label: "B",
-    //   animation: google.maps.Animation.DROP
-    //   // icon: recycling_image
-    // });
+      // var you = new google.maps.Marker({
+      //   position: {lat: <%= @user_location.lat %>, lng: <%= @user_location.lng %>},
+      //   map: map,
+      //   title: 'You!',
+      //   label: "Y",
+      //   animation: google.maps.Animation.DROP
+      //   // icon: person_image
+      // });
 
-    // bin.addListener('click', function() {
-    // infowindowBin.open(map, bin);
-    // });
+      // you.addListener('click', function() {
+      // infowindowUser.open(map, you);
+      // });
 
-</script>
+      // var bin = new google.maps.Marker({
+      //   position: {lat: <%= @bin.latitude %>, lng: <%= @bin.longitude %>},
+      //   map: map,
+      //   title: 'Your bin!',
+      //   label: "B",
+      //   animation: google.maps.Animation.DROP
+      //   // icon: recycling_image
+      // });
 
-<script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTprEG2S0w5APdH4WRIC2ks0aDhMSfyac&callback=initMap">
-</script>
+      // bin.addListener('click', function() {
+      // infowindowBin.open(map, bin);
+      // });
+
+  </script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTprEG2S0w5APdH4WRIC2ks0aDhMSfyac&callback=initMap">
+  </script>
+
+</div>
+
