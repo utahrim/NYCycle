@@ -1,19 +1,21 @@
 
-  var main = $(".main")
+  // $(document).on( "click", "#street-button", function() {
+  // console.log( "what");
+  // });
 
-  $('#street-button').on('click', function(event){
+  // $('.main').on('click', "#street-button" function(event){
 
-    event.preventDefault();
-    data = $(this).serialize()
-    debugger
+  //   event.preventDefault();
+  //   data = $(this).serialize()
+  //   debugger
 
-     $.ajax({
-        url: "bins/street_view",
-        method: "post",
-        data: data
-      })
-      .done(function(response){
-        main.html(response);
-      });
+  //    $.ajax({
+  //       url: "bins/street_view",
+  //       method: "post",
+  //       data: data
+  //     })
+  //     .done(function(response){
+  //       main.html(response);
+  //     });
 
-  });
+  // });

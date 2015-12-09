@@ -6,12 +6,9 @@
 
   <div id="map"></div>
 
-  <%= button_to "Map", { action: "getlatlng", lat: @user_location.latitude, lng: @user_location.longitude, bin: @bin },
-                                method: :post %>
-  <%= button_to "Waking Directions", { action: "walking_directions", lat: @user_location.latitude, lng: @user_location.longitude, bin: @bin },
-                                method: :post %>
-  <%= button_to "Street View", { action: "street_view", lat: @user_location.latitude, lng: @user_location.longitude, bin: @bin },
-                                method: :post %>
+  <%= button_to "Map", { action: "getlatlng", lat: @user_location.latitude, lng: @user_location.longitude, bin: @bin }, id: "map-button", method: :post %>
+  <%= button_to "Waking Directions", { action: "walking_directions", lat: @user_location.latitude, lng: @user_location.longitude, bin: @bin }, id: "walking-button", method: :post %>
+  <%= button_to "Street View", { action: "street_view", lat: @user_location.latitude, lng: @user_location.longitude, bin: @bin }, id: "street-button", method: :post %>
 
   <script type="text/javascript">
 
