@@ -19,7 +19,13 @@
   width: 500px;
  }
 
- #street-view {
+ #walking_directions {
   height: 500px;
   width: 500px;
  }
+
+ #street_view {
+  height: 500px;
+  width: 500px;
+ }
+
