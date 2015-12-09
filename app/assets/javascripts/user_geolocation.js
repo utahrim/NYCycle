@@ -4,7 +4,6 @@ $(document).ready(function(){
   var main = $(".main")
 
   $('#geolocatebin').one('click', function(event){
-
     event.preventDefault();
     whereAmI();
 
@@ -24,7 +23,6 @@ $(document).ready(function(){
           data: user_location
         })
         .done(function(response){
-          main.html(response);
         });
 
       };
