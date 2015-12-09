@@ -3,8 +3,7 @@ $(document).ready(function(){
   var errors = $("#errors")
   var main = $(".main")
 
-  $('#geolocatebin').one('click', function(event){
-
+  $('.button').one('click', function(event){
     event.preventDefault();
     whereAmI();
 
@@ -16,7 +15,6 @@ $(document).ready(function(){
       }
 
       function success(position) {
-
         var user_location = {lat: position.coords.latitude, lng: position.coords.longitude};
         $.ajax({
           url: "bins/getlatlng",
@@ -26,7 +24,6 @@ $(document).ready(function(){
         .done(function(response){
           main.html(response);
         });
-
       };
 
       function error(error) {
