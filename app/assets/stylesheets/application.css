@@ -15,8 +15,8 @@
  */
 
  #map {
-  height: 500px;
-  width: 500px;
+  height: 40em;
+  width: 40em;
  }
 
  #walking_directions {
@@ -29,3 +29,11 @@
   width: 500px;
  }
 
+#myDiv{
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+ }
