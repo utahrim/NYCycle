@@ -3,7 +3,23 @@ $(document).ready(function(){
   var errors = $("#errors")
   var main = $(".main")
 
+  $(document).on("submit", ".button_to", function(event){
+  event.preventDefault();
+  data = $(this).serialize;
+  console.log("please");
+  debugger
+  $.ajax({
+    url: "bins/walking_directions",
+    method: "post",
+    data: user_location
+    })
+    .done(function(response){
+    main.html(response);
+    });
+  });
+
   $('.button').one('click', function(event){
+
     event.preventDefault();
     whereAmI();
 
