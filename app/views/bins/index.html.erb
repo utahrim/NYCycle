@@ -1,22 +1,26 @@
-<h1> Re: </h1>
+<div class="errors">
 
-<button id="button">Find my closest bin</button>
+</div>
 
-<%= form_tag "/bins/convert_to_latlng", method: :post do %>
-  <br>
-  <%= text_field_tag "address", nil, placeholder:"Street Address" %>
-  <br>
-  <%= text_field_tag "city", nil, placeholder:"City" %>
-  <br>
-  <%= text_field_tag "state", nil, placeholder:"State" %>
-  <br>
-  <%= text_field_tag "zip", nil, placeholder:"Zip Code" %>
-  <br>
-  <%= submit_tag "Find Bin" %>
-<% end %>
+<div class="main">
 
+  <h1> Re: </h1>
 
+    <button id="geolocatebin">Find my closest bin</button>
 
-<p id="location"></p>
+    <%= form_tag "/bins/convert_to_latlng", method: :post do %>
+      <br>
+      <%= text_field_tag "address", nil, placeholder:"Street Address" %>
+      <br>
+      <%= text_field_tag "city", nil, placeholder:"City" %>
+      <br>
+      <%= text_field_tag "state", nil, placeholder:"State" %>
+      <br>
+      <%= text_field_tag "zip", nil, placeholder:"Zip Code" %>
+      <br>
+      <%= submit_tag "Find Bin", :id => "find-bin" %>
+    <% end %>
+
+</div>
 
 
