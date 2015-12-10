@@ -1,24 +1,26 @@
 <div class="errors">
 
 </div>
-
-<div class="main">
-
-  <div class="row">
-    <div class="twelve columns text-center"><br />
-
-      <h1> Re: </h1>
-
+<div class="row">
+  <div class="twelve columns text-center"><br />
+  <a href="/" class="logo"><%=image_tag "recycle-icon.png", class: "logo"%></a>
+    <h1> Re: </h1>
+    <br> 
+    <div class="main">
       <div class="main_page">
 
-        <button class="button">Find my closest bin</button>
+        <button class="button large">Use Current Location</button>
+
+        <br>
+
+        <hr>
 
         <%= form_tag "/bins/convert_to_latlng", method: :post do %>
-          <%= submit_tag "Find Bin", class:"success button" %>
           <%= text_field_tag "address", nil, placeholder:"Street Address", required: true %>
           <%= text_field_tag "city", nil, placeholder:"City", required: true %>
           <%= text_field_tag "state", nil, placeholder:"State" %>
           <%= text_field_tag "zip", nil, placeholder:"Zip Code" %>
+          <%= submit_tag "Find Bin", class:"success button" %>
         <% end %>
 
         <p id="location"></p>
@@ -38,5 +40,3 @@
 <div class="streetview-container">
 
 </div>
-
-

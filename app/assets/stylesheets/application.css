@@ -62,3 +62,9 @@
   display: inline-block;
   position: center;
 }
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  height: 6em;
+}
