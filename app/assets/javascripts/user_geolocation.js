@@ -6,7 +6,6 @@ $(document).ready(function(){
   $(document).on("submit", "#map-button", function(event){
   event.preventDefault();
   var data = $(this).serialize();
-  console.log("please");
   $.ajax({
     url: "bins/getlatlng",
     method: "post",

@@ -4,21 +4,21 @@
   <%= hidden_field_tag(:lat, @user_location.latitude) %>
   <%= hidden_field_tag(:lng, @user_location.longitude) %>
   <%= hidden_field_tag(:bin, @bin.id) %>
-  <%= submit_tag("Map")%>
+  <%= submit_tag "Map" %>
   <% end %>
 
   <%= form_tag "/bins/walking_directions", method: :post, id: "walking-button" do %>
   <%= hidden_field_tag(:lat, @user_location.latitude) %>
   <%= hidden_field_tag(:lng, @user_location.longitude) %>
   <%= hidden_field_tag(:bin, @bin.id) %>
-  <%= submit_tag("Walking Directions")%>
+  <%= submit_tag "Walking Directions" %>
   <% end %>
 
   <%= form_tag "/bins/street_view", method: :post, id: "streetview-button" do %>
   <%= hidden_field_tag(:lat, @user_location.latitude) %>
   <%= hidden_field_tag(:lng, @user_location.longitude) %>
   <%= hidden_field_tag(:bin, @bin.id) %>
-  <%= submit_tag("Street View")%>
+  <%= submit_tag("Street View") %>
   <% end %>
 
   <h3>Your Location (A) | The Closest Recycling Bin (B)</h3>
