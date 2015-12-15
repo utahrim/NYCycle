@@ -18,7 +18,6 @@ $(document).ready(function(){
 
    $('.success.button').on('click', function(event){
     event.preventDefault();
-    console.log("yyes")
     var data = $(event.target).parent().serialize()
     $.ajax({
     url: "/bins/convert_to_latlng",
