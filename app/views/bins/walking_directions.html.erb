@@ -21,16 +21,16 @@
   <%= submit_tag("Street View")%>
   <% end %>
 
-  <h3 class="text-center">Walking Directions</h3>
-
+  <h3>Walking Directions</h3>
   <div id="walking_directions"></div>
-
+  <div id="walking_map"></div>
   <script type="text/javascript">
-  var user_lat = <%= @user_location.lat %>;
-  var user_lng = <%= @user_location.lng %>;
-  var bin_lat = <%= @bin.latitude %>;
-  var bin_lng = <%= @bin.longitude %>;
+    var user_lat = <%= @user_location.lat %>;
+    var user_lng = <%= @user_location.lng %>;
+    var bin_lat = <%= @bin.latitude %>;
+    var bin_lng = <%= @bin.longitude %>;
 
   initWalking(user_lat, user_lng, bin_lat, bin_lng);
   </script>
+  </div>
 </div>

@@ -55,7 +55,7 @@ $(document).ready(function(){
   event.preventDefault();
   var data = $(this).serialize();
   $.ajax({
-    url: "bins/getlatlng",
+    url: "/bins/getlatlng",
     method: "post",
     data: data
     })
@@ -68,13 +68,12 @@ $(document).ready(function(){
   event.preventDefault();
   var data = $(this).serialize();
   $.ajax({
-    url: "bins/walking_directions",
+    url: "/bins/walking_directions",
     method: "post",
     data: data
     })
     .done(function(response){
     main.html(response);
-    $("#map").hide()
     });
   });
 
@@ -82,7 +81,7 @@ $(document).ready(function(){
   event.preventDefault();
   var data = $(this).serialize();
   $.ajax({
-    url: "bins/street_view",
+    url: "/bins/street_view",
     method: "post",
     data: data
     })
