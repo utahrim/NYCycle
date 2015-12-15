@@ -21,55 +21,16 @@
   <%= submit_tag("Street View")%>
   <% end %>
 
-  <h3 class="text-center">Walking Directions</h3>
-
+  <h3>Walking Directions</h3>
   <div id="walking_directions"></div>
-
-  <div id="map"></div>
-
+  <div id="walking_map"></div>
   <script type="text/javascript">
+    var user_lat = <%= @user_location.lat %>;
+    var user_lng = <%= @user_location.lng %>;
+    var bin_lat = <%= @bin.latitude %>;
+    var bin_lng = <%= @bin.longitude %>;
 
-    function initMap() {
-
-      var user = {lat: <%= @user_location.lat %>, lng: <%= @user_location.lng %>};
-      var bin = {lat: <%= @bin.latitude %>, lng: <%= @bin.longitude %>};
-
-      var directionsDisplay = new google.maps.DirectionsRenderer;
-      var directionsService = new google.maps.DirectionsService;
-
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 7,
-        center: user
-      });
-
-      directionsDisplay.setMap(map);
-      directionsDisplay.setPanel(document.getElementById('walking_directions'));
-
-      calculateAndDisplayRoute(directionsService, directionsDisplay);
-
-
-      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-        var start = user;
-        var end = bin;
-        directionsService.route({
-          origin: start,
-          destination: end,
-          travelMode: google.maps.TravelMode.WALKING
-        }, function(response, status) {
-          if (status === google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(response);
-          } else {
-            window.alert('Directions request failed due to ' + status);
-          }
-        });
-      }
-    }
-
-
+  initWalking(user_lat, user_lng, bin_lat, bin_lng);
   </script>
-
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTprEG2S0w5APdH4WRIC2ks0aDhMSfyac&callback=initMap">
-  </script>
-
+  </div>
 </div>
