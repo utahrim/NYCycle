@@ -24,7 +24,7 @@
 #map {
   margin: 0 auto 0 auto;
   position: relative;
-  padding-bottom: 65.25%;
+  padding-bottom: 45.25%;
   padding-top: 13em;
   height: 0;
   overflow: hidden;
@@ -33,7 +33,7 @@
 #street_view {
   margin: 0 auto 0 auto;
   position: relative;
-  padding-bottom: 65.25%;
+  padding-bottom: 55.25%;
   padding-top: 13em;
   height: 0;
   overflow: hidden;
@@ -42,8 +42,8 @@
 #walking_directions {
   margin: 0 auto 0 auto;
   position: relative;
-  padding-bottom: 65.25%;
-  padding-top: 13em;
+  padding-bottom: 120%;
+  padding-top: 0em;
   height: 0;
   overflow: hidden;
  }
