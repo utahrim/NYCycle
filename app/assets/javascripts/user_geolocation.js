@@ -3,7 +3,33 @@ $(document).ready(function(){
   var errors = $("#errors")
   var main = $(".main")
 
-  $('.button').one('click', function(event){
+  $('.address_form').hide()
+
+  $('.address').on('click', function(event){
+    event.preventDefault();
+    if ($('.address_form').is(":hidden")){
+      $('.address_form').slideDown()
+    }
+    else {
+      $('.address_form').slideUp()
+    }
+
+  })
+
+   $('.success.button').on('click', function(event){
+    event.preventDefault();
+    var data = $(event.target).parent().serialize()
+    $.ajax({
+    url: "/bins/convert_to_latlng",
+    method: "post",
+    data: data
+    })
+    .done(function(response){
+    main.html(response);
+    });
+  });
+
+  $('.location').one('click', function(event){
 
     event.preventDefault();
     whereAmI();

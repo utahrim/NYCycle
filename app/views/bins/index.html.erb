@@ -7,20 +7,23 @@
     <br>
     <div class="main">
       <div class="main_page">
-
-        <button class="button large">Use Current Location</button>
-
+      <h2>Find Closest NYC Recycling Bin:</h2>
+      <br>
+        <button class="button large location">Use Current Location</button>
+        <button class="button large address">Input Address</button>
         <br>
 
         <hr>
-
-        <%= form_tag "/bins/convert_to_latlng", method: :post do %>
+        <div class="address_form">
+          <%= form_tag "/bins/convert_to_latlng", method: :post do %>
           <%= text_field_tag "address", nil, placeholder:"Street Address", required: true %>
           <%= text_field_tag "city", nil, placeholder:"City", required: true %>
           <%= text_field_tag "state", nil, placeholder:"State" %>
           <%= text_field_tag "zip", nil, placeholder:"Zip Code" %>
           <%= submit_tag "Find Bin", class:"success button" %>
         <% end %>
+        </div>
+
 
         <p id="location"></p>
       </div>
