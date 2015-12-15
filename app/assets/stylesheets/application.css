@@ -45,22 +45,24 @@
   padding-bottom: 120%;
   padding-top: 0em;
   height: 0;
-  overflow: hidden;
  }
 
 #map-button {
   display: inline-block;
   position: center;
+  font-weight: bold;
 }
 
 #streetview-button {
   display: inline-block;
   position: center;
+  font-weight: bold;
 }
 
 #walking-button {
   display: inline-block;
   position: center;
+  font-weight: bold;
 }
 
 .logo {
