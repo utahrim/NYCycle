@@ -28,7 +28,8 @@ class BinsController < ApplicationController
     address_data = Geokit::Geocoders::GoogleGeocoder.geocode address
     @user_location = Geokit::LatLng.new(address_data.lat, address_data.lng)
     @bin = Bin.closest(:origin => @user_location).first
-    render "/bins/getlatlng"
+    # binding.pry
+    render "/bins/getlatlng", layout: false
   end
 
 end
