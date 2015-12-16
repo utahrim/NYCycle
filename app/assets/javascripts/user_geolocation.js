@@ -8,10 +8,14 @@ $(document).ready(function(){
   $('.address').on('click', function(event){
     event.preventDefault();
     if ($('.address_form').is(":hidden")){
-      $('.address_form').slideDown()
+      $('.address').text("Cancel")
+      $('.logo').css("margin-top", "0em");
+      $('.address_form').fadeIn();
     }
     else {
-      $('.address_form').slideUp()
+      $('.address').text("Input A NYC Address")
+      $('.address_form').fadeOut();
+      $('.logo').css("margin-top", "8em");
     }
 
   })
@@ -32,6 +36,7 @@ $(document).ready(function(){
   $('.location').one('click', function(event){
 
     event.preventDefault();
+    $('.logo').css("margin-top", "0em");
     whereAmI();
 
     function whereAmI() {
