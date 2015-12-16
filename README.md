@@ -1,25 +1,3 @@
-== README
+NYCycle is a web application that uses geolocation technology to allow you to locate the nearest recycling bin in NYC. Using data on bins from NYC Open Data, the user's location from their browser, and maps from the Google Maps API, we make it easy for people to do their part to reduce, reuse, and recycle. 
 
-TO DOs:
-
-1. Write a proper ReadMe!
-2. Custom icons or info for markers.
-3. Step-by-step directions.
-4. Foundation.
-5. Photoshop images.
-6. Deploy to Heroku.
-7. Load ENV variables.
-
-Stretch:
-
-* Show all bins in range.
-* Street view.
-* CircleCi
-* 
-To get JS maps working better:
-
-Remove callback on end of asynchronous call. Move asynchronous call into layout.html.erb.
-
-Name each function different name.
-
-Move JS into javascript files. Use <script> tag to call each function (initMap() for example), pass the function arguments which have user and bin lat long.
+Features: Find closest recycling bin to your geolocation, find closest recycling bin to a street address, render a street map that marks both your and the bin's location, render walking directions to the bin's location, render a street view of the location of the bin.
