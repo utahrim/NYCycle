@@ -49,19 +49,16 @@
 
 #map-button {
   display: inline-block;
-  position: center;
   font-weight: bold;
 }
 
 #streetview-button {
   display: inline-block;
-  position: center;
   font-weight: bold;
 }
 
 #walking-button {
   display: inline-block;
-  position: center;
   font-weight: bold;
 }
 
@@ -69,4 +66,10 @@
   display: block;
   margin: 0 auto;
   height: 6em;
+  margin-top: 8em;
+}
+
+#buttons {
+  width:100%;
+  text-align: center;
 }

@@ -8,16 +8,25 @@ $(document).ready(function(){
   $('.address').on('click', function(event){
     event.preventDefault();
     if ($('.address_form').is(":hidden")){
-      $('.address_form').slideDown()
+      $('.address').text("Cancel")
+      $('.logo').animate({"margin-top": "0em"});
+      $('.address_form').fadeIn();
     }
     else {
-      $('.address_form').slideUp()
+      $('.address').text("Input A NYC Address")
+      $('.address_form').fadeOut();
+      $('.logo').animate({"margin-top": "8em"});
     }
 
   })
 
    $('.success.button').on('click', function(event){
     event.preventDefault();
+    $('.logo').children().animate({ "margin-left": ".5em" }, 100 )
+    $('.logo').children().animate({ "height": "3em" }, 100 )
+    $('.logo').animate({ "margin-top": "0em" }, 1000 );
+    $('.main').animate({ "margin-top": "-4em" }, 1000 );
+    $('.logo').children().attr("src", "/assets/nycyclesmall.png")
     var data = $(event.target).parent().serialize()
     $.ajax({
     url: "/bins/convert_to_latlng",
@@ -32,6 +41,11 @@ $(document).ready(function(){
   $('.location').one('click', function(event){
 
     event.preventDefault();
+    $('.logo').children().animate({ "margin-left": ".5em" }, 100 )
+    $('.logo').children().animate({ "height": "3em" }, 100 )
+    $('.logo').animate({ "margin-top": "0em" }, 1000 );
+    $('.main').animate({ "margin-top": "-4em" }, 1000 );
+    $('.logo').children().attr("src", "/assets/nycyclesmall.png")
     whereAmI();
 
     function whereAmI() {
