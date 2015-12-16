@@ -9,13 +9,13 @@ $(document).ready(function(){
     event.preventDefault();
     if ($('.address_form').is(":hidden")){
       $('.address').text("Cancel")
-      $('.logo').css("margin-top", "0em");
+      $('.logo').animate({"margin-top": "0em"});
       $('.address_form').fadeIn();
     }
     else {
       $('.address').text("Input A NYC Address")
       $('.address_form').fadeOut();
-      $('.logo').css("margin-top", "8em");
+      $('.logo').animate({"margin-top": "8em"});
     }
 
   })
