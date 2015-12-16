@@ -4,21 +4,21 @@
   <%= hidden_field_tag(:lat, @user_location.latitude) %>
   <%= hidden_field_tag(:lng, @user_location.longitude) %>
   <%= hidden_field_tag(:bin, @bin.id) %>
-  <%= submit_tag "Map", class:"button small" %>
+  <%= submit_tag "Map", class:"button round" %>
   <% end %>
 
   <%= form_tag "/bins/walking_directions", method: :post, id: "walking-button" do %>
   <%= hidden_field_tag(:lat, @user_location.latitude) %>
   <%= hidden_field_tag(:lng, @user_location.longitude) %>
   <%= hidden_field_tag(:bin, @bin.id) %>
-  <%= submit_tag "Walking Directions", class:"button small" %>
+  <%= submit_tag "Walking Directions", class:"button round" %>
   <% end %>
 
   <%= form_tag "/bins/street_view", method: :post, id: "streetview-button" do %>
   <%= hidden_field_tag(:lat, @user_location.latitude) %>
   <%= hidden_field_tag(:lng, @user_location.longitude) %>
   <%= hidden_field_tag(:bin, @bin.id) %>
-  <%= submit_tag "Street View", class:"button small disabled  " %>
+  <%= submit_tag "Street View", class:"button round disabled  " %>
   <% end %>
 
   <div id="street_view"></div>
