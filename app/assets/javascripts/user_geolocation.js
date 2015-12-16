@@ -26,7 +26,6 @@ $(document).ready(function(){
     $('.logo').children().animate({ "height": "3em" }, 100 )
     $('.logo').animate({ "margin-top": "0em" }, 1000 );
     $('.main').animate({ "margin-top": "-4em" }, 1000 );
-    $('.logo').children().attr("src", "/assets/nycyclesmall.png")
     var data = $(event.target).parent().serialize()
     $.ajax({
     url: "/bins/convert_to_latlng",
@@ -45,7 +44,6 @@ $(document).ready(function(){
     $('.logo').children().animate({ "height": "3em" }, 100 )
     $('.logo').animate({ "margin-top": "0em" }, 1000 );
     $('.main').animate({ "margin-top": "-4em" }, 1000 );
-    $('.logo').children().attr("src", "/assets/nycyclesmall.png")
     whereAmI();
 
     function whereAmI() {
