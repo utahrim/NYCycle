@@ -1,4 +1,4 @@
-[NYCycle] (https://github.com/utahrim/Re/blob/master/app/assets/images/nycycle.png)
+![NYCycle] (https://github.com/utahrim/Re/blob/master/app/assets/images/nycycle.png)
 
 NYCycle is a web application that uses geolocation technology to allow you to locate the nearest recycling bin in NYC. Using data on bins from NYC Open Data, the user's location from their browser, and maps from the Google Maps API, we make it easy for people to do their part to reduce, reuse, and recycle. 
 
