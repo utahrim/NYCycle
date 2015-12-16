@@ -1,31 +1,34 @@
 <div class="main">
 
-  <%= form_tag "/bins/getlatlng", method: :post, id: "map-button" do %>
-  <%= hidden_field_tag(:lat, @user_location.latitude) %>
-  <%= hidden_field_tag(:lng, @user_location.longitude) %>
-  <%= hidden_field_tag(:bin, @bin.id) %>
-  <%= submit_tag "Map", class:"button round" %>
-  <% end %>
+  <div id="buttons">
+    <%= form_tag "/bins/getlatlng", method: :post, id: "map-button" do %>
+    <%= hidden_field_tag(:lat, @user_location.latitude) %>
+    <%= hidden_field_tag(:lng, @user_location.longitude) %>
+    <%= hidden_field_tag(:bin, @bin.id) %>
+    <%= submit_tag "Map", class:"button round" %>
+    <% end %>
 
-  <%= form_tag "/bins/walking_directions", method: :post, id: "walking-button" do %>
-  <%= hidden_field_tag(:lat, @user_location.latitude) %>
-  <%= hidden_field_tag(:lng, @user_location.longitude) %>
-  <%= hidden_field_tag(:bin, @bin.id) %>
-  <%= submit_tag "Directions", class:"button round" %>
-  <% end %>
+    <%= form_tag "/bins/walking_directions", method: :post, id: "walking-button" do %>
+    <%= hidden_field_tag(:lat, @user_location.latitude) %>
+    <%= hidden_field_tag(:lng, @user_location.longitude) %>
+    <%= hidden_field_tag(:bin, @bin.id) %>
+    <%= submit_tag "Directions", class:"button round" %>
+    <% end %>
 
-  <%= form_tag "/bins/street_view", method: :post, id: "streetview-button" do %>
-  <%= hidden_field_tag(:lat, @user_location.latitude) %>
-  <%= hidden_field_tag(:lng, @user_location.longitude) %>
-  <%= hidden_field_tag(:bin, @bin.id) %>
-  <%= submit_tag "View", class:"button round disabled  " %>
-  <% end %>
+    <%= form_tag "/bins/street_view", method: :post, id: "streetview-button" do %>
+    <%= hidden_field_tag(:lat, @user_location.latitude) %>
+    <%= hidden_field_tag(:lng, @user_location.longitude) %>
+    <%= hidden_field_tag(:bin, @bin.id) %>
+    <%= submit_tag "View", class:"button round disabled  " %>
+    <% end %>
+  </div>
 
   <div id="street_view"></div>
+
   <script type="text/javascript">
     var bin_lat = <%= @bin.latitude %>;
     var bin_lng = <%= @bin.longitude %>;
-
     initStreet(bin_lat, bin_lng);
   </script>
+
 </div>

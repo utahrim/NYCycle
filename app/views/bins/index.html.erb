@@ -1,15 +1,22 @@
 <div class="errors">
 
 </div>
+
 <div class="row">
+
   <div class="twelve columns text-center"><br />
-  <a href="javascript:location.reload(true)" class="logo"><%=image_tag "nycycle.png", class: "logo"%></a>
+
+    <a href="javascript:location.reload(true)" class="logo"><%=image_tag "nycycle.png", class: "logo"%></a>
     <br>
+
     <div class="main">
+
       <div class="main_page">
       <br>
+
         <button class="button large location">Use Current Location</button>
         <button class="button large address">Input A NYC Address</button>
+
         <div class="address_form">
           <%= form_tag "/bins/convert_to_latlng", method: :post do %>
           <%= text_field_tag "address", nil, placeholder:"Street Address", required: true %>
@@ -19,9 +26,9 @@
         <% end %>
         </div>
 
-
         <p id="location"></p>
       </div>
+
     </div>
   </div>
 </div>
